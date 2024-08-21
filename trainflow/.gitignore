@@ -1,4 +1,5 @@
 .idea
+./.idea
 DJANGO_SECRET_KEY.txt
 
 */migrations
