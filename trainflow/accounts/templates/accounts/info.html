@@ -1,0 +1,75 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+{% endblock %}
+{% block content %}
+    <main>
+        <div class="member-infos">
+            <h1 class="page-title">Informations</h1>
+            <div>
+                <p>Nom d'utilisateur</p>
+                <p class="info">{{ member.username }}</p>
+            </div>
+            {% if member.first_name %}
+                <div>
+                    <p>Prénom</p>
+                    <p class="info">{{ member.first_name }}</p>
+                </div>
+            {% endif %}
+            {% if member.last_name %}
+                <div>
+                    <p>Nom</p>
+                    <p class="info">{{ member.last_name }}</p>
+                </div>
+            {% endif %}
+            {% if member.email %}
+                <div>
+                    <p>Email</p>
+                    <p class="info">{{ member.email }}</p>
+                </div>
+            {% endif %}
+            {% if member.birth %}
+                <div>
+                    <p>Date de naissance</p>
+                    <p class="info">{{ member.birth }}</p>
+                </div>
+            {% endif %}
+            {% if member.gender %}
+                <div>
+                    <p>Sexe</p>
+                    <p class="info">
+
+                        {% if member.gender == "male" %}
+                            Homme
+                        {% endif %}
+                        {% if member.gender == "female" %}
+                            Femme
+                        {% endif %}
+                    </p>
+                </div>
+            {% endif %}
+
+            {% if member.height %}
+                <div>
+                    <p>Taille</p>
+                    <p class="info">{{ member.height }}</p>
+                </div>
+            {% endif %}
+            {% if member.weight %}
+                <div>
+                    <p>Poids</p>
+                    <p class="info">{{ member.weight }}</p>
+                </div>
+            {% endif %}
+
+            {% if not member.athlete_profile_completed %}
+                <a class="finish-profile" href="{% url 'athlete-signup' %}">Compléter votre profil d'athlète</a>
+            {% endif %}
+            <button class="logout-button"><a href="{% url 'logout' %}">Se déconnecter</a></button>
+            <a href="{% url 'delete-account' %}">Supprimer le compte</a>
+        </div>
+    </main>
+{% endblock %}

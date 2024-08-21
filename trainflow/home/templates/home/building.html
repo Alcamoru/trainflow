@@ -1,0 +1,21 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>En cours de développement</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<main class="building">
+
+    <h1>En cours de développement</h1>
+    <div class="github-wrapper">
+        <a class="github" href="https://github.com/Alcamoru/train-flow-web">
+            <img class="github-logo" src="{% static 'media/github.png' %}" alt="">
+            <p>Nous rejoindre</p>
+        </a>
+    </div>
+</main>
+{% endblock %}

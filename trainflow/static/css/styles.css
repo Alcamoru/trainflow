@@ -1,0 +1,159 @@
+.hero-section {
+    height: 80%;
+    font-size: 2.2rem;
+    background-image: url("../media/triathlete.jpg");
+    background-size: cover;
+    grid-column: span 2;
+    color: white;
+    text-align: center;
+    padding: 4rem;
+}
+
+.hero-section h1 {
+    margin: 3rem 0 10rem 0;
+}
+
+.hero-section h2 {
+    margin: 3rem 0 30% 0;
+}
+
+main {
+    background-color: #FEF9EF;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.img-carousel {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(1, 0.1, 0.5, 1);
+}
+
+.img-carousel-item {
+    flex: 0 0 100%; /* Each item takes full width of carousel */
+    overflow: hidden;
+    min-width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+.img-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 18px;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.descriptions {
+    flex-direction: column;
+    display: flex;
+    grid-column: 2;
+    margin-top: 20px;
+}
+
+.description {
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20%;
+    font-size: 2rem;
+    color: grey;
+}
+
+.description.active {
+    color: black;
+}
+
+.engagement {
+    background-color: #FEFAE0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h2 {
+    margin: 2rem;
+}
+
+p {
+    margin: 2rem;
+    text-align: center;
+}
+
+img {
+    height: 2rem;
+}
+
+.github-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    box-shadow: white 0 0 10px;
+    margin: 5vh;
+    width: 50vh;
+    border: solid white;
+    border-radius: 20px;
+    text-underline: none;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.github-logo {
+    margin: 20px;
+    width: 8vh;
+    height: 8vh;
+}
+
+.github p {
+    font-size: 5vh;
+    margin: 10px;
+}
+
+.building {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.building h1 {
+    text-align: center;
+    color: white;
+}

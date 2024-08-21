@@ -1,0 +1,32 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    {% block header %}
+
+    {% endblock %}
+</head>
+
+<body>
+<header>
+    <div class="menu">
+        <ul>
+            <li><a class="menu-link" href="{% url 'coach' %}">Trainflow</a></li>
+            <li><a class="menu-link" href="{% url 'calendar' %}">Calendrier</a></li>
+            <li><a class="menu-link" href="{% url 'info' %}">{{ user.username }}</a></li>
+            <li><a class="menu-link" href="{% url 'switch-profile' %}">Passer au profil athlete</a></li>
+        </ul>
+    </div>
+</header>
+{% block content %}
+
+{% endblock %}
+
+<footer>
+</footer>
+
+</body>

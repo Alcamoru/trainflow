@@ -1,0 +1,44 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>Trainflow - Accueil</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+    <main>
+        <div class="hero-section">
+            <h1>Trainflow</h1>
+            <h2>Faites partie des Meilleurs</h2>
+        </div>
+        <div class="carousel">
+            <div class="img-carousel">
+                <div class="img-carousel-item active">
+                    <img src="{% static 'media/curve-example.png' %}" alt="Image 1">
+                </div>
+                <div class="img-carousel-item">
+                    <img src="{% static 'media/pro-cyclist.jpeg' %}" alt="Image 1">
+                </div>
+                <div class="img-carousel-item">
+                    <img src="{% static 'media/athlete-musculation.jpeg' %}" alt="Image 1">
+
+                </div>
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+
+        </div>
+        <div class="descriptions">
+            <p class="description">Vivez le sport comme vous ne l’avez
+                jamais fait</p>
+            <p class="description">Améliorez vous de jour en jour</p>
+            <p class="description">Visualisez vos progrès dans le temps</p>
+        </div>
+
+    </main>
+    <script src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}

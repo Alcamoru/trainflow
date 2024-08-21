@@ -1,0 +1,182 @@
+/* Multi-files styles */
+
+main {
+    background-color: #FEF9EF;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1, h2 {
+    margin: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+input {
+    font-size: 1.5rem;
+    color: white;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="radio"]:checked + .option {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+input[type="radio"]:checked {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Login styles */
+
+.login-form {
+    margin: 3rem;
+    color: white;
+    padding: 3rem;
+    background-color: #17C3B2;
+    border-radius: 15px;
+}
+
+.form-step {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submit-button {
+    cursor: pointer;
+    margin-top: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: #227C9D;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Signup form */
+
+.signup-welcome-panel {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signup-form {
+    margin: 3rem 0 1rem 0;
+    color: white;
+    padding: 3rem;
+    background-color: #17C3B2;
+    border-radius: 15px;
+}
+
+.form-step {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Athlete signup styles */
+
+#athlete-signup-form {
+    width: 30vw;
+    margin: 3rem 0 1rem 0;
+    color: white;
+    padding: 3rem;
+    background-color: #17C3B2;
+    border-radius: 15px;
+}
+
+.custom-radio-gender input[type="radio"] {
+    display: none;
+}
+
+/* Style the custom radio labels for gender field */
+.custom-radio-gender {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px; /* Adjust spacing between options */
+    font-size: 16px;
+}
+
+/* Underline and bold the text when selected */
+.custom-radio-gender input[type="radio"]:checked + span {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Ensure the gender options are aligned horizontally */
+.gender-options {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Info styles */
+
+.member-infos {
+    color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #17C3B2;
+    padding: 2rem;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.member-infos div {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout-button {
+    cursor: pointer;
+    margin-top: 2rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background-color: #227C9D;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.finish-profile {
+    margin: 1rem;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}

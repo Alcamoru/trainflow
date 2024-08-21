@@ -1,0 +1,56 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>Inscription</title>
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+
+{% endblock %}
+{% block content %}
+
+    <main>
+        <div class="signup-welcome-panel">
+            <h1>Bienvenue sur Trainflow</h1>
+            <h2>Avant de commencer, dites nous qui vous êtes</h2>
+            <p>Nous ne partageons pas vos information avec des tiers, ne les commercialisons pas,
+                et n’utilisons pas vos informations à des fins commerciales.</p>
+        </div>
+        <form id="signup-form" method="post" class="signup-form">
+            {% csrf_token %}
+            <div>
+                <div class="form-step">
+                    <label for="firstname">prénom</label>
+                    <input type="text" id="firstname" name="firstname">
+                </div>
+                <div class="form-step">
+                    <label for="lastname">nom</label>
+                    <input type="text" id="lastname" name="lastname">
+                </div>
+                <div class="form-step">
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                <div class="form-step">
+                    <label for="password">mot de passe</label>
+                    <input type="password" id="password" name="password">
+                </div>
+
+                <div class="form-step">
+                    <label for="username">nom d'utilisateur</label>
+                    <input type="text" id="username" name="username">
+                </div>
+            </div>
+            <div class="submit">
+                <button class="submit-button" type="submit">S'inscrire</button>
+            </div>
+        </form>
+        <script>
+            document.addEventListener('keypress', function(event) {
+                if (event.key === 'Enter') {
+                    event.preventDefault();  // Prevents default form submission
+                    document.querySelector('form').submit();  // Manually submits the form
+                }
+            });
+        </script>
+    </main>
+{% endblock %}

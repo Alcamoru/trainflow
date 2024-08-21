@@ -1,0 +1,35 @@
+{% extends base_template %}
+{% load static %}
+
+{% block header %}
+    <title>Trainflow</title>
+    <link rel="stylesheet" href="{% static 'css/members.css' %}">
+
+{% endblock %}
+
+{% block content %}
+    <main>
+        <h1>Complétez votre profil d'athlete</h1>
+        <div>
+            <form method="post" id="athlete-signup-form" class="athlete-signup-form">
+                {% csrf_token %}
+                <p>{{ form.birthdate.label_tag }} {{ form.birthdate }}</p>
+                <p class="gender-container">
+                    {{ form.gender.label_tag }}
+                <div class="gender-options">
+                    {% for radio in form.gender %}
+                        <label class="custom-radio-gender">
+                            {{ radio.tag }}
+                            <span>{{ radio.choice_label }}</span>
+                        </label>
+                    {% endfor %}
+                </div>
+                </p>
+                <p>{{ form.weight.label_tag }} {{ form.weight }}</p>
+                <p>{{ form.height.label_tag }} {{ form.height }}</p>
+                <p>{{ form.sports.label_tag }} {{ form.sports }}</p>
+                <button class="submit-button" type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </main>
+{% endblock %}
