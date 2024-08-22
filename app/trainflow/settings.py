@@ -24,10 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 with open("DJANGO_SECRET_KEY.txt", "r") as f:
     SECRET_KEY = f.read()
 
+SECRET_KEY = os.environ.get('SECRET_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
 ALLOWED_HOSTS = []
+ALLOWED_HOSTS.extend(
+    filter(None,
+           os.environ.get('ALLOWED_HOSTS', '').split(','))
+)
 
 # Application definition
 
@@ -41,7 +47,8 @@ INSTALLED_APPS = [
     'home',
     "accounts",
     "coach",
-    'athlete'
+    'athlete',
+    "core"
 ]
 
 MIDDLEWARE = [
@@ -81,11 +88,13 @@ WSGI_APPLICATION = 'trainflow.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        "HOST": os.environ.get('DB_HOST'),
+        "NAME": os.environ.get('DB_NAME'),
+        "USER": os.environ.get('DB_USER'),
+        "PASSWORD": os.environ.get('DB_PASS'),
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
